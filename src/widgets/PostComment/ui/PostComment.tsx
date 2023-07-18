@@ -39,7 +39,7 @@ export function PostComment() {
 		e.preventDefault();
 		if (privacy) {
 			setLoading(true);
-			const res = await fetch(`http://localhost:1337/api${GetDataPaths.REVIEWS}`, {
+			const res = await fetch(`http://cms:1337/api${GetDataPaths.REVIEWS}`, {
 				method: "POST",
 				headers: {
 					"Content-type": "application/json",

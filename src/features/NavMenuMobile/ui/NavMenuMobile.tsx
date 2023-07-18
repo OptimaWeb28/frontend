@@ -45,7 +45,7 @@ export function NavMenuMobile(props: {
 		e.preventDefault();
 		if (privacy) {
 			setLoading(true);
-			const res = await fetch(`http://localhost:1337/api${GetDataPaths.CALLBACKS}`, {
+			const res = await fetch(`http://cms:1337/api${GetDataPaths.CALLBACKS}`, {
 				method: "POST",
 				headers: {
 					"Content-type": "application/json",

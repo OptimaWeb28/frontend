@@ -19,7 +19,7 @@ import {SearchIndex} from "@/entities/SearchIndex";
 
 
 const searchClient = instantMeiliSearch(
-	'http://localhost:7700', // Host
+	'http://meilisearch:7700', // Host
 	'' // API key
 )
 

@@ -78,7 +78,7 @@ export function PostResume() {
 			if (file) {
 				formData.append('files.Resume', file, file.name);
 			}
-			const res = await fetch(`http://localhost:1337/api${GetDataPaths.RESUME}`, {
+			const res = await fetch(`http://cms:1337/api${GetDataPaths.RESUME}`, {
 				method: "POST",
 				headers: {
 					'Authorization': `Bearer 88bd9e53708d0bd474ea67971d89b26406109c9835b60db9cf5cbf41a3128c764ad850dffe92024975003cc2216faf9df819066765445a412c0345865d13e80220192aad97c8c45bae477aff41a69ce0eecfcc851cf68acc4d40216fa2fb3ff86db582580475756dd18728a5e2e7c3e236e589b9ba20c237ae85f8747cdc7b85`
