@@ -1,0 +1,167 @@
+@import '@/shared/styles/mixins.scss';
+
+.Doctor {
+
+  .cardWrapper {
+    display: grid;
+    grid-template-columns: 0.3fr 0.7fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+                        'image info'
+                        'image button';
+    margin-top: 40px;
+    padding: 0 20px;
+    gap: 45px;
+    justify-content: space-between;
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr auto auto 1fr;
+      grid-template-areas:
+                          '. image info .'
+                          '. button button .';
+      outline: 1px solid var(--primary-color);
+      box-shadow: 0px 0px 10px var(--primary-color);
+      border-radius: 10px;
+      padding: adaptive(40, 20, 992, 375) adaptive(20, 10, 992, 375);
+      gap: adaptive(20, 10, 992, 375);
+    }
+
+    .imageWrapper {
+      grid-area: image;
+      position: relative;
+      height: 360px;
+      display: flex;
+      @media (max-width: 1200px) {
+        height: 300px;
+      }
+      @media (max-width: 992px) {
+        height: auto;
+        min-width: adaptive(263, 150, 992, 375);
+      }
+
+      .image {
+        object-position: top;
+        object-fit: contain;
+      }
+
+    }
+
+    .infoWrapper {
+      grid-area: info;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr auto auto;
+      row-gap: 10px;
+      grid-template-areas:
+    'position position'
+    'raiting satisfaction'
+    'education experience';
+      @media (max-width: 992px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto) 1fr auto;
+        gap: adaptive(10, 5, 992, 375);
+        grid-template-areas:
+          'position'
+          'raiting'
+          'satisfaction'
+          'education'
+          'experience'
+          '.'
+          'button';
+      }
+
+      .position {
+        grid-area: position;
+        align-self: center;
+        font-weight: 700;
+        font-size: rem(22);
+        @media (max-width: 992px) {
+          font-size: adaptive(22, 14, 992, 375);
+        }
+      }
+
+      .icon {
+        width: 22px;
+      }
+
+      .raiting {
+        grid-area: raiting;
+      }
+
+      .satisfaction {
+        grid-area: satisfaction;
+
+      }
+
+      .education {
+        grid-area: education;
+      }
+
+      .experience {
+        grid-area: experience;
+      }
+
+
+      .props {
+        flex: 0 0 50%;
+        font-size: rem(16);
+        color: var(--primary-text-color);
+        margin-top: 7px;
+        display: flex;
+        align-items: center;
+        @media (max-width: 992px) {
+          font-size: adaptive(16, 8, 992, 375);
+        }
+
+        .icon {
+          display: inline-block;
+          color: var(--secondary-color);
+          margin-right: 15px;
+          font-size: 25px;
+          width: 25px;
+          @media (max-width: 992px) {
+            font-size: adaptive(25, 16, 992, 375);
+          }
+
+        }
+      }
+
+
+    }
+
+    .button {
+      grid-area: button;
+      height: 46px;
+      align-self: end;
+      @media (max-width: 992px) {
+        height: adaptive(46, 30, 992, 375);
+      }
+    }
+  }
+
+  .description {
+    margin-top: 50px;
+    line-height: 30px;
+    @media (max-width: 992px) {
+      margin-top: adaptive(50, 25, 992, 375);
+      line-height: adaptive(30, 16, 992, 375);
+      padding: 20px;
+      border: 1px solid var(--primary-border-color);
+      border-radius: 10px;
+    }
+
+    .descriptionTitle {
+      font-size: rem(25);
+      @media (max-width: 992px) {
+        font-size: adaptive(25, 16, 992, 375);
+      }
+    }
+
+    .descriptionText {
+      margin-top: 35px;
+      @media (max-width: 992px) {
+        margin-top: adaptive(35, 10, 992, 375);
+        font-size: adaptive(16, 14, 992, 375);
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import '@/shared/styles/mixins.scss';
+
+.text {
+
+  h1 {
+    font-size: rem(40);
+    margin: 40px 0 25px;
+  }
+
+  h3 {
+    margin: 70px 0 15px;
+  }
+
+  p {
+    line-height: 28px;
+  }
+}

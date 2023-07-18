@@ -1,0 +1,131 @@
+@import "@/shared/styles/mixins.scss";
+
+.Exellence {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 80px 0;
+  cursor: default;
+  column-gap: 5px;
+  row-gap: 30px;
+  @media (max-width: 992px) {
+    column-gap: adaptive(20, 10, 992, 375);
+    margin: adaptive(80, 40, 992, 375) 0;
+    row-gap: adaptive(30, 10, 992, 375);
+    border: 1px solid var(--primary-border-color);
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .text {
+    position: relative;
+    z-index: var(--exellence-text-z-index);
+  }
+
+  & .item, .mainItem {
+    height: 195px;
+    flex: 0 0 24.5%;
+    border-radius: 4px;
+    box-shadow: 0 0 16px hsla(60, 0%, 45%, .16);
+    overflow: hidden;
+    @media (max-width: 992px) {
+      flex: 0 0 48%;
+      height: adaptive(195, 140, 992, 375);
+    }
+  }
+
+  & .mainItem {
+    position: relative;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 30px 17px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    @media (max-width: 992px) {
+      padding-bottom: adaptive(20, 12, 992, 375);
+    }
+
+    & .mainDigit {
+      font-size: rem(100);
+      position: absolute;
+      top: 10%;
+      right: -25px;
+      @media (max-width: 992px) {
+        @include adaptiv-font(100, 85, 992, 375);
+
+      }
+    }
+
+    & .mainDescr {
+      font-size: rem(22);
+      line-height: 33px;
+      @media (max-width: 992px) {
+        @include adaptiv-font(32, 14, 992, 375);
+        line-height: adaptive(33, 14, 992, 375)
+      }
+    }
+  }
+
+  & .item {
+    padding: 10px;
+
+    & .wrapper {
+      border: 1px solid var(--primary-border-color);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      height: 100%;
+      padding: 20px 15px;
+      @media (max-width: 1200px) {
+        gap: 20px;
+      }
+      @media (max-width: 992px) {
+        gap: adaptive(14, 10, 992, 375);
+        padding: adaptive(20, 10, 992, 375) adaptive(15, 10, 992, 375);
+      }
+
+      & .itemTitle {
+        font-size: rem(20);
+        text-align: center;
+        @media (max-width: 1200px) {
+          font-size: rem(18);
+        }
+        @media (max-width: 992px) {
+          @include adaptiv-font(28, 14, 992, 375);
+        }
+      }
+
+      & .itemCount {
+        font-size: rem(50);
+        @media (max-width: 1200px) {
+          font-size: rem(40);
+        }
+        @media (max-width: 992px) {
+          @include adaptiv-font(50, 24, 992, 375);
+        }
+      }
+
+      & .itemDescr {
+        text-align: center;
+        @media (max-width: 1200px) {
+          font-size: rem(14);
+        }
+        @media (max-width: 992px) {
+          @include adaptiv-font(18, 10, 992, 375);
+        }
+      }
+
+      & .img {
+        left: 50% !important;
+        width: 60% !important;
+        top: 50% !important;
+        height: auto !important;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+  }
+}

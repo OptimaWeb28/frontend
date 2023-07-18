@@ -1,0 +1,60 @@
+@import "@/shared/styles/mixins.scss";
+
+.privacy {
+  width: 100%;
+  font-size: rem(10);
+  @media (max-width: 992px) {
+    text-align: center;
+    @include adaptiv-font(10, 8, 992, 375);
+    line-height: 17px;
+  }
+
+
+  .inputPrivacy {
+    position: absolute;
+    opacity: 1;
+    width: 0;
+    height: 0;
+  }
+
+  .labelPrivacy {
+    position: relative;
+
+    &.warning:after {
+      content: 'Для отправки отзыва необходимо согласие на обработку персональных данных';
+      display: inline-block;
+      margin-top: 10px;
+      height: 30px;
+      color: red;
+      font-size: rem(16);
+      text-align: center;
+      width: 100%;
+      @media (max-width: 992px) {
+        @include adaptiv-font(14, 7, 992, 375);
+        margin-top: 0;
+      }
+    }
+
+    &:before {
+      content: '';
+      width: 15px;
+      height: 15px;
+      border: 1px solid var(--primary-border-color);
+      border-radius: 4px;
+      display: inline-block;
+      margin-right: 10px;
+      transform: translateY(25%);
+      cursor: pointer;
+    }
+
+    &.active {
+      &:before {
+        background: var(--primary-color) url('/images/reviews/checkmark.svg') center center/70% no-repeat;
+      }
+    }
+
+    .link {
+      color: var(--primary-color);
+    }
+  }
+}

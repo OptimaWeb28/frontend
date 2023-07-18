@@ -1,0 +1,196 @@
+@import '@/shared/styles/mixins.scss';
+
+.PriceBlock {
+  display: grid;
+  grid-template-areas: 'text price button1 button2';
+  align-items: center;
+  border: 1px solid var(--primary-border-color);
+  border-radius: 4px;
+  margin: 30px 0;
+  @media (max-width: 992px) {
+    width: 100%;
+    grid-template-areas:
+                          'text price'
+                          'button1 button1'
+                          'button2 button2';
+    margin: 10px 0;
+  }
+
+  .item {
+    border-left: 1px solid var(--primary-border-color);
+    padding: 10px 20px;
+
+    &:first-child {
+      border-left: none;
+    }
+  }
+
+  .textWrapper {
+    grid-area: text;
+    font-size: rem(40);
+    @media (max-width: 1200px) {
+      font-size: rem(30);
+    }
+    @media (max-width: 992px) {
+      text-align: center;
+      font-size: adaptive(18, 14, 992, 375);
+      padding: 10px adaptive(20, 10, 992, 375);
+    }
+
+    .text {
+
+    }
+  }
+
+  .priceWrapper {
+    grid-area: price;
+    font-size: rem(35);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    @media (max-width: 992px) {
+      font-size: adaptive(18, 14, 992, 375);
+      justify-content: center;
+    }
+
+    .price {
+    }
+  }
+
+  .buttonWrapper {
+    @media (max-width: 992px) {
+      border-top: 1px solid var(--primary-border-color);
+    }
+  }
+
+  .button {
+    padding: 15px 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-size: rem(25);
+
+
+  }
+
+  .button1Wrapper {
+    grid-area: button1;
+
+  }
+
+  .button2Wrapper {
+    grid-area: button2;
+  }
+
+  .button1 {
+    background-color: var(--primary-color);
+    @media (max-width: 992px) {
+      width: 100%;
+      justify-content: center;
+      font-size: adaptive(18, 14, 992, 375);
+      padding: adaptive(15, 10, 992, 375) adaptive(20, 15, 992, 375);
+    }
+
+    &:hover {
+      box-shadow: 0 5px 10px var(--primary-shadow-color);
+      transform: scale(101%);
+      transition: box-shadow .2s;
+    }
+  }
+
+  .button2 {
+    background-color: var(--secondary-color);
+    @media (max-width: 992px) {
+      width: 100%;
+      justify-content: center;
+      font-size: adaptive(18, 14, 992, 375);
+      padding: adaptive(15, 10, 992, 375) adaptive(20, 15, 992, 375);
+    }
+
+    &:hover {
+      box-shadow: 0 5px 10px var(--secondary-shadow-color);
+      transform: scale(101%);
+      transition: box-shadow .2s;
+    }
+  }
+
+  //type === "OnList"
+
+  &.OnList {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 'text price button';
+    justify-items: center;
+    z-index: var(--price-block-z-index);
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas:
+                          'text price'
+                          'button button';
+    }
+
+    .item {
+      border: none;
+    }
+
+    .textWrapper {
+      grid-area: text;
+      font-size: rem(22);
+      color: var(--secondary-text-color);
+      @media (max-width: 1200px) {
+        font-size: rem(18);
+      }
+      @media (max-width: 992px) {
+        font-size: adaptive(18, 14, 992, 375);
+        padding: 10px adaptive(20, 10, 992, 375);
+      }
+    }
+
+    .priceWrapper {
+      grid-area: price;
+      border-left: 1px solid var(--primary-border-color);
+      width: 100%;
+      justify-content: center;
+      color: var(--secondary-text-color);
+      @media (max-width: 1200px) {
+        font-size: rem(18);
+      }
+      @media (max-width: 992px) {
+        font-size: adaptive(18, 14, 992, 375);
+      }
+
+    }
+
+    .button1Wrapper {
+      grid-area: button;
+      border-left: 1px solid var(--primary-border-color);
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      @media (max-width: 1200px) {
+        button {
+
+          font-size: rem(18);
+        }
+      }
+      @media (max-width: 992px) {
+        border-top: 1px solid var(--primary-border-color);
+        button {
+          font-size: adaptive(18, 14, 992, 375);
+          padding: adaptive(15, 10, 992, 375) adaptive(20, 15, 992, 375);
+          width: 100%;
+          justify-content: center;
+        }
+
+      }
+    }
+
+    .button2Wrapper {
+      display: none;
+    }
+  }
+
+
+}

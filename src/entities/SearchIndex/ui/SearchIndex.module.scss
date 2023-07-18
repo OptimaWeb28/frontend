@@ -1,0 +1,35 @@
+.stats {
+  margin-bottom: 10px;
+  text-align: right;
+  color: var(--secondary-text-color);
+}
+
+.hits {
+
+}
+
+.pagination {
+  padding-bottom: 20px;
+
+  & ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--primary-border-color);
+
+
+    & li {
+      color: var(--secondary-text-color);
+      width: 20px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

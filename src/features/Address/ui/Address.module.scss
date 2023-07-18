@@ -1,0 +1,29 @@
+@import '@/shared/styles/mixins.scss';
+
+
+.parent {
+  position: relative;
+
+  & .linkParent {
+    & .link {
+      font-size: rem(11);
+      color: var(--primary-color);
+    }
+
+    position: absolute;
+    left: 0;
+    top: 102%;
+    border-bottom: 1px dashed var(--primary-color);
+    line-height: 14px;
+
+    &:hover {
+      & .link {
+        color: var(--secondary-color);
+      }
+
+      border-bottom: 1px dashed var(--secondary-color);
+    }
+  }
+
+}
+

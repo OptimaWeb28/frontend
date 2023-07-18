@@ -1,0 +1,21 @@
+@import '@/shared/styles/mixins.scss';
+
+.Header, .address {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Header {
+  padding: 25px 0;
+  @media (max-width: 992px) {
+    width: 100%;
+    padding: adaptive(25, 15, 992, 375) adaptive(20, 10, 992, 375);
+  }
+}
+
+.address {
+  @media (max-width: 992px) {
+    display: none;
+  }
+}

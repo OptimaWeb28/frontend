@@ -1,0 +1,196 @@
+@import '@/shared/styles/mixins.scss';
+
+.PostResume {
+  position: relative;
+  @media (max-width: 992px) {
+    border: 1px solid var(--primary-border-color);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .successMsg, .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+    text-align: center;
+    background-color: white;
+    border: 1px solid var(--primary-color);
+    padding: 50px;
+    border-radius: 10px;
+    z-index: 1;
+    font-size: rem(20);
+    line-height: 30px;
+    color: var(--primary-color);
+    cursor: default;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    @media (max-width: 992px) {
+      transform: translateX(-50%) translateY(-50%);
+
+    }
+
+
+    span {
+      color: var(--secondary-text-color);
+      font-size: rem(14);
+    }
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  .loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 90px;
+
+    span {
+      position: absolute;
+      text-align: center;
+      line-height: 16px;
+      bottom: 12px;
+    }
+  }
+
+  .successMsg {
+    @media (max-width: 992px) {
+      padding: 20px;
+    }
+  }
+
+  .title {
+    text-align: left;
+    font-size: rem(40);
+    margin-top: 50px;
+
+  }
+
+  .form {
+    display: grid;
+    grid-template-columns: 0.3fr 0.05fr 0.1fr 0.2fr;
+    grid-template-areas:
+    'nameLabel . phoneLabel phoneLabel'
+    'name . phone phone'
+    'textLabel textLabel textLabel textLabel'
+    'text text text text'
+    'fileLabel fileLabel fileLabel fileLabel'
+    'file file file file'
+    'privacy privacy privacy button';
+    @media (max-width: 992px) {
+      max-width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(7, auto);
+      justify-items: center;
+      grid-template-areas:
+                          'name'
+                          'phone'
+                          'text'
+                          'fileLabel'
+                          'file'
+                          'privacy'
+                          'button';
+      gap: 10px;
+    }
+
+
+    input, textarea {
+      padding: 15px 20px;
+      border: 1px solid;
+      border-color: var(--primary-border-color);
+      margin-top: 5px;
+      @media (max-width: 992px) {
+        width: adaptive(900, 320, 992, 375);
+      }
+
+
+      &:focus {
+        outline-color: var(--primary-color);
+      }
+    }
+
+    .textLabel, .fileLabel, .privacy, .button {
+      margin-top: 30px;
+      @media (max-width: 992px) {
+        margin-top: adaptive(30, 15, 992, 375);
+      }
+
+    }
+
+    .label {
+
+    }
+
+    .nameLabel {
+      grid-area: nameLabel;
+      @media (max-width: 992px) {
+        display: none;
+      }
+    }
+
+    .name {
+      grid-area: name;
+    }
+
+    .phoneLabel {
+      grid-area: phoneLabel;
+      @media (max-width: 992px) {
+        display: none;
+      }
+    }
+
+    .phone {
+      grid-area: phone;
+    }
+
+    .textLabel {
+      grid-area: textLabel;
+      @media (max-width: 992px) {
+        display: none;
+      }
+    }
+
+    .text {
+      grid-area: text;
+      height: 150px;
+    }
+
+    .fileLabel {
+      grid-area: fileLabel;
+    }
+
+    .file {
+      grid-area: file;
+    }
+
+    .privacy {
+      grid-area: privacy;
+      align-self: center;
+      @media (max-width: 992px) {
+        input {
+          display: none;
+        }
+      }
+    }
+
+    .button {
+      grid-area: button;
+      color: white;
+      background-color: var(--primary-color);
+      border-radius: 4px;
+      padding: 18px;
+
+
+      &:hover {
+        box-shadow: 0 5px 10px var(--primary-shadow-color);
+        transform: scale(101%);
+        transition: box-shadow .2s;
+      }
+    }
+  }
+}

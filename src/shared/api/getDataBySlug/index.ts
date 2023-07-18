@@ -1,0 +1,1 @@
+export {getDataBySlug} from './ui/getDataBySlug';

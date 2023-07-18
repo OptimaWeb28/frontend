@@ -1,0 +1,47 @@
+@import '@/shared/styles/mixins';
+
+
+.Documents {
+  margin-top: 60px;
+  @media (max-width: 992px) {
+    margin-top: adaptive(60, 20, 992, 375);
+  }
+
+  .document {
+    display: block;
+    font-size: rem(22);
+    color: var(--primary-color);
+    text-decoration: underline;
+    line-height: 33px;
+    //padding: 23px 60px;
+    padding: 23px 0 23px 60px;
+    border-top: 1px solid var(--primary-border-color);
+    position: relative;
+    @media (max-width: 992px) {
+      font-size: adaptive(22, 14, 992, 375);
+      line-height: adaptive(33, 24, 992, 375);
+    }
+
+    &:last-child {
+      border-bottom: 1px solid var(--primary-border-color);
+    }
+
+    &:before {
+      content: '';
+      height: 36px;
+      width: 33px;
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      background: url("/images/documents/pdfIcon.svg");
+      transform: translateY(-50%);
+    }
+
+    @media (min-width: 993px) {
+      &:hover {
+        color: var(--primary-hover-color)
+      }
+    }
+
+  }
+}

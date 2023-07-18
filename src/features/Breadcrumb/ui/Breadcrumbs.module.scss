@@ -1,0 +1,21 @@
+@import '@/shared/styles/mixins.scss';
+
+.Breadcrumb {
+  font-weight: 500;
+  padding: 20px 0;
+  font-size: rem(13);
+  @media (max-width: 992px) {
+    display: none;
+    //font-size: adaptive(13, 10, 992, 375);
+    padding: 10px 0;
+  }
+}
+
+.link {
+  color: var(--primary-color);
+
+  &:hover {
+    text-decoration: underline;
+    color: var(--primary-hover-color);
+  }
+}

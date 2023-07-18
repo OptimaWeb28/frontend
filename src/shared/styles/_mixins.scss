@@ -1,0 +1,23 @@
+@mixin adaptiv-font($maxSize, $minSize, $maxWidth, $minWidth) {
+  $addSize: $maxSize - $minSize;
+  $maxWidth: $maxWidth - $minWidth;
+  font-size: calc(
+          #{$minSize + px} + #{$addSize} *
+          ((100vw - #{$minWidth + px}) / #{$maxWidth})
+  );
+}
+
+@function rem($px) {
+  $result: ($px / 16) + rem;
+  @return $result;
+}
+
+@function adaptive($maxSize, $minSize, $maxWidth, $minWidth) {
+  $addSize: $maxSize - $minSize;
+  $maxWidth: $maxWidth - $minWidth;
+  $result: calc(
+          #{$minSize + px} + #{$addSize} *
+          ((100vw - #{$minWidth + px}) / #{$maxWidth})
+  );
+  @return $result;
+}

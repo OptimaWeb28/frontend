@@ -1,0 +1,68 @@
+@import '@/shared/styles/mixins.scss';
+
+.Contacts {
+  margin-top: 40px;
+  @media (max-width: 992px) {
+    display: none;
+  }
+
+  & .title {
+    text-align: center;
+    font-size: rem(40);
+    margin-bottom: 50px;
+  }
+
+  & .wrapper {
+    position: relative;
+    overflow: hidden;
+
+    & .map {
+      width: 100%;
+      border: none;
+      height: var(--contacts-heigth);
+      overflow: hidden;
+    }
+
+    & .container {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: var(--contacts-heigth);
+    }
+
+    & .addressCard {
+      position: absolute;
+      background-color: white;
+      height: var(--contacts-heigth);
+      width: 350px;
+      top: 0;
+      left: 0;
+      padding: 10px;
+
+      &Wrapper {
+        border: 1px solid var(--primary-border-color);
+        border-radius: 4px;
+        height: 100%;
+      }
+
+      & .logo {
+        padding: 15px 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      & .address {
+        margin-top: 20px;
+        display: grid;
+        justify-content: center;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+
+
+
+

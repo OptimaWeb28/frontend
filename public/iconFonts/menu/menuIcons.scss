@@ -1,0 +1,86 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('icomoon.eot');
+  src: url('icomoon.eot') format('embedded-opentype'),
+  url('icomoon.ttf') format('truetype'),
+  url('icomoon.woff') format('woff'),
+  url('icomoon.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-menu-call-us:before {
+  content: "\e1205";
+}
+
+.icon-menu-chat:before {
+  content: "\e1204";
+}
+
+.icon-menu-online-record:before {
+  content: "\e1203";
+}
+
+.icon-menu-about:before {
+  content: "\e1202";
+}
+
+.icon-menu-articles:before {
+  content: "\e1201";
+}
+
+.icon-menu-docs:before {
+  content: "\e1200";
+}
+
+.icon-menu-feedback:before {
+  content: "\e1119";
+}
+
+.icon-menu-licence:before {
+  content: "\e1118";
+}
+
+.icon-menu-news:before {
+  content: "\e1117";
+}
+
+.icon-menu-vakancy:before {
+  content: "\e1116";
+}
+
+.icon-menu-home:before {
+  content: "\e1111";
+}
+
+.icon-menu-info:before {
+  content: "\e1112";
+}
+
+.icon-menu-devices:before {
+  content: "\e1113";
+}
+
+.icon-menu-services:before {
+  content: "\e1114";
+}
+
+.icon-menu-doctors:before {
+  content: "\e1115";
+}

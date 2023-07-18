@@ -1,0 +1,50 @@
+@import '@/shared/styles/mixins.scss';
+
+.ServiceHit {
+  border-bottom: 1px solid var(--primary-border-color);
+  display: grid;
+  grid-template-columns: 1fr 0.03fr auto 0.03fr auto;
+  grid-template-areas:
+          'title . price . button'
+          'breadcrumbs . price . button';
+  row-gap: 5px;
+  align-items: center;
+  padding: 30px 20px;
+
+  &:first-child {
+    border-top: 1px solid var(--primary-border-color);
+  }
+
+  .title mark {
+    grid-area: title;
+    background-color: var(--primary-shadow-color);
+    line-height: 26px;
+    color: var(--secondary-text-color);
+  }
+
+  .breadcrumbs {
+    grid-area: breadcrumbs;
+    font-size: rem(12);
+    color: var(--secondary-text-color);
+    border-top: 1px solid var(--primary-border-color);
+    justify-self: start;
+    line-height: 25px;
+  }
+
+  .price {
+    grid-area: price;
+  }
+
+  .button {
+    grid-area: button;
+    cursor: pointer;
+    color: white;
+    background-color: var(--primary-color);
+    padding: 15px 20px;
+    border-radius: 5px;
+  }
+
+}
+
+
+

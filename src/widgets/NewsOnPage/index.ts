@@ -1,0 +1,1 @@
+export {NewsOnPage} from './ui/NewsOnPage';

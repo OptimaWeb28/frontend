@@ -1,0 +1,71 @@
+@import '@/shared/styles/mixins';
+
+.CommentsList {
+  .review {
+    padding: 30px 0;
+    border-top: 1px solid var(--primary-border-color);
+    display: grid;
+    grid-template-columns: 0.2fr 0.05fr 0.8fr;
+    grid-template-areas: 'left . right';
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, auto);
+      grid-template-areas:
+                          'left'
+                          'right';
+      padding: 30px 10px;
+      border-top: 1px solid var(--primary-color);
+      &:last-child {
+        border-bottom: 1px solid var(--primary-color);
+      }
+    }
+
+    .leftSide {
+      grid-area: left;
+      @media (max-width: 992px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) auto;
+        gap: 30px;
+        align-items: center;
+        border-bottom: 1px solid var(--primary-border-color);
+        padding-bottom: 30px;
+      }
+
+      .name {
+        font-size: rem(22);
+      }
+
+      .date {
+        margin-top: 20px;
+        @media (max-width: 992px) {
+          margin-top: 0;
+        }
+      }
+
+      .raiting {
+        margin-top: 20px;
+        width: 35px;
+        height: 35px;
+        background: url("/images/reviews/likeGreen.svg") center center/90% no-repeat;
+        @media (max-width: 992px) {
+          margin-top: 0;
+        }
+
+        &.like {
+        }
+
+        &.dislike {
+          transform: scaleY(-1);
+        }
+      }
+    }
+
+    .rightSide {
+      grid-area: right;
+      line-height: 30px;
+      @media (max-width: 922px) {
+        padding-top: 30px;
+      }
+    }
+  }
+}

@@ -1,0 +1,160 @@
+.Licenses {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  .imageWrapper {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    height: 430px;
+    width: 32%;
+    @media (max-width: 992px) {
+      width: 300px;
+    }
+
+
+    .image {
+      //position: relative !important;
+      //width: auto !important;
+      //max-height: 430px !important;
+      //max-width: 100% !important;
+      object-fit: contain;
+    }
+
+
+  }
+
+  & > .imageWrapper {
+    box-shadow: 0 0 16px hsla(60, 0%, 45%, 0.16);
+    transition: box-shadow 0.3s, outline 0.3s;
+
+
+    &:hover {
+      outline: 2px solid var(--primary-color);
+      box-shadow: 0px 0px 20px var(--primary-color);
+      @media (max-width: 992px) {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-overlay-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: var(--carousel-popup-z-index);
+
+    .popupTitle {
+      position: absolute;
+      left: 50%;
+      top: 4%;
+      transform: translateX(-50%);
+      color: var(--secondary-text-color);
+      @media (max-width: 992px) {
+        text-align: center;
+      }
+    }
+
+    .imageWrapper {
+      margin: 0 auto;
+      height: 85%;
+      position: relative;
+
+      .loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.5s;
+
+        &.active {
+          opacity: 1;
+        }
+      }
+
+      .popupImage {
+        //position: relative !important;
+        object-fit: contain;
+        opacity: 0;
+        transition: opacity 0.3s;
+
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      z-index: var(--carousel-buttons-z-index);
+      font-size: 50px;
+      background: transparent;
+      color: var(--secondary-text-color);
+
+      &:hover {
+        color: var(--primary-color);
+        @media (max-width: 992px) {
+          color: var(--secondary-text-color);
+        }
+      }
+    }
+
+    .prev {
+      left: 0;
+      transform: rotate(90deg) translateX(-50%);
+    }
+
+    .next {
+      right: 0;
+      transform: rotate(-90deg) translateX(50%);
+    }
+
+    .prevPopup {
+      left: 3%;
+    }
+
+    .nextPopup {
+      right: 3%;
+    }
+
+    .count {
+      color: var(--secondary-text-color);
+      position: absolute;
+      left: 50%;
+      bottom: 3%;
+      transform: translateX(-50%);
+      font-size: 22px;
+
+    }
+
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 30px;
+      width: 40px;
+      color: var(--secondary-text-color);
+      background: transparent;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}

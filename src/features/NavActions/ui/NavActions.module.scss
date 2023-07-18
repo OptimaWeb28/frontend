@@ -1,0 +1,18 @@
+@import '@/shared/styles/mixins.scss';
+
+.rightSide {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: var(--secondary-text-color);
+  @media (max-width: 1200px) {
+    gap: 20px;
+  }
+  @media (max-width: 992px) {
+    .search, .loupe {
+      width: adaptive(70, 40, 992, 375);
+      height: 45px;
+    }
+    gap: 0;
+  }
+}

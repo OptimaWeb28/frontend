@@ -1,0 +1,1 @@
+export {PostResume} from './ui/PostResume';

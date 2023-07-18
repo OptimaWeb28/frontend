@@ -1,0 +1,1 @@
+export {DoctorsHit} from './ui/DoctorsHit';

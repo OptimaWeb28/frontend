@@ -1,0 +1,108 @@
+@import '@/shared/styles/mixins.scss';
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--secondary-overlay-color);
+  z-index: var(--record-overlay-z-index);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+
+  .popup {
+    flex: 0 1 1140px;
+    height: 80%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid var(--primary-color);
+    @media (max-width: 992px) {
+      height: 88%;
+      margin-bottom: adaptive(105, 84, 992, 375);
+      border: none;
+    }
+
+    .closePanel {
+      //height: 20px;
+      background-color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      align-items: center;
+      border-bottom: 4px solid var(--primary-border-color);
+
+      .closeText {
+        color: var(--secondary-text-color);
+      }
+
+      .close {
+        background: white;
+        border-radius: 100%;
+        font-size: rem(20);
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        color: var(--record-popup-close-btn-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 3px;
+        border: 2px solid var(--record-popup-close-btn-color);
+        transition: color 0.3s, border 0.3s;
+        position: relative;
+
+        &:before, &:after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 60%;
+          height: 2px;
+          transform: translate(-50%, -50%);
+          background-color: var(--record-popup-close-btn-color);
+          transition: background-color 0.2s;
+        }
+
+        &:before {
+          transform: translate(-50%, -50%) rotate(45deg);
+
+        }
+
+        &:after {
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        &:hover {
+          color: var(--secondary-color);
+          border-color: var(--secondary-color);
+
+          &:before, &:after {
+            background-color: var(--secondary-color);
+          }
+        }
+
+
+      }
+
+    }
+
+    & iframe {
+      width: 100%;
+      height: calc(100% - 68px);
+      border-left: none;
+      border-top: none;
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+}

@@ -1,0 +1,1 @@
+export {NewsHit} from './ui/NewsHit';

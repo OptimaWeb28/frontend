@@ -1,0 +1,1 @@
+export {ArticlesHit} from './ui/ArticlesHit';

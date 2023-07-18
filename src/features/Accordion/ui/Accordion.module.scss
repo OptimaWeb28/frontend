@@ -1,0 +1,80 @@
+@import '@/shared/styles/mixins.scss';
+
+.accordion {
+  margin-bottom: 20px;
+  border: 1px solid var(--primary-border-color);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    background-color: #f5f5f5;
+
+    .title {
+      color: var(--primary-color);
+      font-size: rem(22);
+    }
+
+    .icon {
+      width: 10px;
+      height: 10px;
+      border: solid #333;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease-in-out;
+
+      &.active {
+        transform: rotate(-135deg);
+      }
+    }
+
+  }
+
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    color: var(--primary-text-color);
+
+    .service {
+      display: grid;
+      grid-template-columns: 1fr 0.03fr auto 0.03fr auto;
+      grid-template-areas: 'title . price . button';
+      align-items: center;
+      padding: 30px 20px;
+      border-bottom: 1px solid var(--primary-border-color);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .title {
+        grid-area: title;
+        line-height: 26px;
+      }
+
+
+      .price {
+        grid-area: price;
+      }
+
+      .button {
+        grid-area: button;
+        cursor: pointer;
+        color: white;
+        background-color: var(--primary-color);
+        padding: 15px 20px;
+        border-radius: 5px;
+      }
+    }
+
+    &.active {
+      max-height: fit-content;
+      transition: max-height 0.3s ease-in-out;
+    }
+
+  }
+
+}

@@ -1,0 +1,44 @@
+@import './mixins.scss';
+
+:root {
+  --primary-color: rgba(67, 172, 62, 1);
+  --primary-shadow-color: rgba(67, 172, 62, .46);
+  --primary-hover-color: rgb(25, 72, 23);
+  --primary-text-color: #333333;
+  --primary-border-color: #EAEAEA;
+  --primary-overlay-color: black;
+
+  --secondary-color: rgba(229, 20, 116, 1);
+  --secondary-shadow-color: rgba(229, 20, 116, .8);
+  --secondary-text-color: rgba(115, 115, 114, 1);
+  --secondary-overlay-color: #656c85cc;
+
+  --important-color: #FF6800;
+
+  --checkbox-color: #c1c1c1;
+
+  --parent-dropdown-z-index: 2;
+  --exellence-text-z-index: 1;
+  --device-link-z-index: 1;
+
+  --navbar-z-index: 2;
+  --navbar-overlay-z-index: -1;
+  --mobile-bottom-menu-z-index: 2;
+  --mobile-bottom-menu-z-index-active: 3;
+  --mobile--bottom-overlay-z-index: -1;
+
+  --search-overflay-z-index: 5;
+  --search-popup-z-index: 6;
+
+  --record-overlay-z-index: 5;
+  --record-popup-z-index: 5;
+
+  --price-block-z-index: 1;
+  --record-popup-close-btn-color: rgb(63, 174, 202);
+
+  --carousel-buttons-z-index: 1;
+  --carousel-popup-z-index: 3;
+
+  --contacts-heigth: 350px;
+
+}

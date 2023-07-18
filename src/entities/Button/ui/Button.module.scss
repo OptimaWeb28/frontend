@@ -1,0 +1,48 @@
+@import '@/shared/styles/mixins.scss';
+
+.Button {
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.text {
+  font-size: rem(14);
+  @media (max-width: 1200px) {
+    font-size: rem(11);
+  }
+}
+
+.icon {
+  font-size: rem(25);
+}
+
+.primary {
+  background-color: var(--primary-color);
+
+  &:hover {
+    box-shadow: 0 5px 10px var(--primary-shadow-color);
+    transform: scale(101%);
+    transition: box-shadow .2s;
+  }
+
+}
+
+.secondary {
+  background-color: var(--secondary-color);
+
+  &:hover {
+    box-shadow: 0 5px 10px var(--secondary-shadow-color);
+    transform: scale(101%);
+    transition: box-shadow .2s;
+  }
+
+}
+
+.allWidth {
+  width: 100%;
+}

@@ -1,0 +1,66 @@
+@import '@/shared/styles/mixins.scss';
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 445px;
+  grid-template-areas: 'text image';
+  align-items: start;
+  margin-top: 30px;
+  gap: 30px;
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 0;
+    grid-template-areas:
+                      'image'
+                      'text';
+  }
+
+  .textWrapper {
+    grid-area: text;
+    @media (max-width: 992px) {
+      border: 1px solid var(--primary-border-color);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .text {
+      line-height: 20px;
+      @media (max-width: 992px) {
+        font-size: adaptive(16, 14, 992, 375);
+      }
+
+      a {
+        color: var(--primary-color);
+
+        &:hover {
+          text-decoration: underline;
+          color: var(--primary-hover-color);
+        }
+      }
+    }
+  }
+
+  .imageWrapper {
+    grid-area: image;
+    position: relative;
+    height: 350px;
+    @media (max-width: 992px) {
+      height: adaptive(350, 250, 992, 375);
+      border: 1px solid var(--primary-border-color);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    img {
+      //position: relative !important;
+      //height: auto !important;
+      object-fit: contain;
+    }
+  }
+
+  .priceBlock {
+    grid-column: 1/3;
+    justify-self: center;
+  }
+}

@@ -1,0 +1,47 @@
+.NotFound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: flex-start;
+    align-items: center;
+
+    .image {
+      fill: var(--primary-color);
+    }
+
+    .title {
+
+    }
+
+    .link {
+      color: var(--primary-color);
+
+      .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        background-color: var(--primary-color);
+        padding: 15px 25px;
+        border-radius: 10px;
+        width: 100%;
+        margin-bottom: 10px;
+        gap: 11px;
+
+        &:hover {
+          box-shadow: 0 5px 10px var(--primary-shadow-color);
+          transform: scale(101%);
+          transition: box-shadow .2s;
+        }
+      }
+    }
+
+  }
+
+}

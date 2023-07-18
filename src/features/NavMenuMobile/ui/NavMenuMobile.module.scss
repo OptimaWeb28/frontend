@@ -1,0 +1,318 @@
+@import '@/shared/styles/mixins.scss';
+
+.leftSideMob {
+  @include adaptiv-font(18, 14, 992, 375);
+  display: none;
+  @media (max-width: 992px) {
+    display: flex;
+  }
+
+  .contacts, .callback {
+    padding: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 2px;
+      border-radius: 10px;
+      width: calc(100% - 30px);
+      background-color: transparent;
+      transition: background-color 0.3s;
+    }
+
+    &.active {
+      color: var(--primary-color);
+
+
+      &:before {
+        background-color: var(--primary-color);
+        box-shadow: 0 0 4px var(--primary-color);
+      }
+    }
+  }
+
+  .arrow {
+    margin-left: 3px;
+    @include adaptiv-font(12, 9, 992, 375);
+
+  }
+
+  .contactDrop, .callbackDrop {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out, padding 0.2s linear, opacity 0.15s ease-out;
+    display: flex;
+    opacity: 0;
+    color: var(--primary-text-color);
+
+
+    &.active {
+      padding: adaptive(20, 10, 992, 375) 10px adaptive(40, 20, 992, 375) 10px;
+      max-height: 300px;
+      box-shadow: 0 10px 6px rgba(0, 0, 0, 0.1);
+      opacity: 1;
+      overflow: auto;
+    }
+  }
+
+  .contactDrop {
+    display: block;
+
+    .address {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+      align-items: start;
+      width: 100%;
+      padding-bottom: 10px;
+
+
+      .item {
+        width: 100%;
+        height: 100%;
+        padding: 0 adaptive(80, 5, 992, 375);
+        text-align: center;
+        border-right: 1px solid var(--primary-border-color);
+        line-height: adaptive(24, 16, 992, 375);
+
+        .hint {
+          margin-top: 5px;
+          color: var(--secondary-text-color);
+          @include adaptiv-font(12, 8, 992, 375);
+          line-height: 12px;
+
+        }
+
+        &:last-child {
+          border-right: none;
+        }
+
+        span {
+          display: block;
+          margin-bottom: 10px;
+        }
+
+      }
+
+      .cityAndStreet {
+
+      }
+
+      .time {
+
+      }
+
+      .phone {
+        a {
+          color: var(--primary-color);
+          @include adaptiv-font(18, 12, 992, 375);
+        }
+      }
+    }
+
+    .joinUs {
+      padding: 10px 0;
+      border-top: 1px solid var(--primary-border-color);
+      display: grid;
+
+      &Title {
+        @include adaptiv-font(24, 14, 992, 375);
+        text-align: center;
+      }
+
+      .socialWrapper {
+        margin-top: adaptive(50, 25, 992, 375);
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        @include adaptiv-font(24, 14, 992, 375);
+
+        span {
+          color: white;
+          padding: adaptive(15, 8, 992, 375);
+          background-color: var(--primary-color);
+          border-radius: 100%;
+        }
+
+      }
+    }
+  }
+
+  .callbackDrop {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .successMsg, .loader {
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      text-align: center;
+      background-color: white;
+      border: 1px solid var(--primary-color);
+      padding: 50px;
+      border-radius: 10px;
+      z-index: 1;
+      font-size: rem(20);
+      line-height: 30px;
+      color: var(--primary-color);
+      cursor: default;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s;
+
+      span {
+        color: var(--secondary-text-color);
+        font-size: rem(14);
+      }
+
+      &.active {
+        opacity: 1;
+      }
+    }
+
+    .successMsg {
+      padding: adaptive(30, 10, 992, 375);
+      line-height: adaptive(30, 20, 992, 375);
+
+      div {
+        &:first-child {
+          @include adaptiv-font(30, 20, 992, 375);
+        }
+
+        &:nth-child(2) {
+          @include adaptiv-font(20, 14, 992, 375);
+
+        }
+      }
+
+      span {
+        @include adaptiv-font(12, 8, 992, 375);
+      }
+    }
+
+    .loader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+      padding-bottom: 90px;
+
+      span {
+        position: absolute;
+        text-align: center;
+        line-height: 16px;
+        bottom: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .form {
+      padding-top: 25px;
+      display: grid;
+      width: adaptive(600, 300, 992, 375);
+      grid-template-rows: 2fr 1fr 2fr 1fr 2fr 0.1fr auto;
+      grid-template-areas:
+              'name'
+              '.'
+              'phone'
+              '.'
+              'button'
+              '.'
+              'privacy';
+
+      .input {
+        padding: 0 20px;
+        border-radius: 10px;
+        border: 1px solid var(--secondary-text-color);
+
+        &:hover, &:focus {
+          outline: 2px solid var(--primary-color);
+          border: none;
+        }
+      }
+
+      .name {
+        grid-area: name;
+      }
+
+      .phone {
+        grid-area: phone;
+      }
+
+      .submit {
+        grid-area: button;
+      }
+
+      .privacy {
+        grid-area: privacy;
+      }
+
+      .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        background-color: var(--primary-color);
+        padding: 15px 0;
+        border-radius: 10px;
+        width: 100%;
+        margin-bottom: 10px;
+        gap: 11px;
+
+        .icon {
+
+          padding-bottom: 3px;
+        }
+
+        &:hover {
+          box-shadow: 0 5px 10px var(--primary-shadow-color);
+          transform: scale(101%);
+          transition: box-shadow .2s;
+        }
+      }
+    }
+  }
+}
+
+.overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 25px;
+  padding-bottom: 35%;
+  top: 100%;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  filter: grayscale(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: var(--navbar-overlay-z-index);
+  color: var(--secondary-text-color);
+  font-size: rem(20);
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+}

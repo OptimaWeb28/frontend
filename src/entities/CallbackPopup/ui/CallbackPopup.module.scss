@@ -1,0 +1,169 @@
+@import "@/shared/styles/mixins.scss";
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: var(--primary-color);
+  padding: 15px 0;
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  gap: 11px;
+
+  .icon {
+
+    padding-bottom: 3px;
+  }
+
+  &:hover {
+    box-shadow: 0 5px 10px var(--primary-shadow-color);
+    transform: scale(101%);
+    transition: box-shadow .2s;
+  }
+}
+
+.overlay {
+  position: fixed;
+  background-color: var(--secondary-overlay-color);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--search-overflay-z-index);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .successMsg, .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    background-color: white;
+    border: 1px solid var(--primary-color);
+    padding: 50px;
+    border-radius: 10px;
+    z-index: 1;
+    font-size: rem(20);
+    line-height: 30px;
+    color: var(--primary-color);
+    cursor: default;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    span {
+      color: var(--secondary-text-color);
+      font-size: rem(14);
+    }
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  .loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 90px;
+
+    span {
+      position: absolute;
+      text-align: center;
+      line-height: 16px;
+      bottom: 12px;
+    }
+  }
+
+  .popup {
+    position: absolute;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--primary-color);
+
+
+    .close {
+      position: absolute;
+      background: white;
+      border-radius: 100%;
+      top: -15px;
+      right: -10px;
+      font-size: rem(20);
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      color: var(--primary-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 3px;
+      border: 1px solid var(--primary-color);
+      transition: color 0.3s, border 0.3s;
+
+      &:hover {
+        color: var(--secondary-color);
+        border-color: var(--secondary-color);
+      }
+
+
+    }
+
+    .form {
+      display: grid;
+      width: 300px;
+      grid-template-rows: 2fr 1fr 2fr 1fr 2fr 0.1fr auto;
+      grid-template-areas:
+              'name'
+              '.'
+              'phone'
+              '.'
+              'button'
+              '.'
+              'privacy';
+
+      .input {
+        padding: 0 20px;
+        border-radius: 10px;
+        border: 1px solid var(--secondary-text-color);
+
+        &:hover, &:focus {
+          outline: 2px solid var(--primary-color);
+          border: none;
+        }
+      }
+
+      .name {
+        grid-area: name;
+      }
+
+      .phone {
+        grid-area: phone;
+      }
+
+      .submit {
+        grid-area: button;
+      }
+
+      .privacy {
+        grid-area: privacy;
+      }
+    }
+
+  }
+
+}

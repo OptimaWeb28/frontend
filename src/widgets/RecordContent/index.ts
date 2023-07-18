@@ -1,0 +1,1 @@
+export {RecordContent} from './ui/RecordContent';

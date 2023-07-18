@@ -1,0 +1,1 @@
+export {getDataWithPagination} from './ui/getDataWithPagination';
